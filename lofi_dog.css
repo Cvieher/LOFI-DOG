@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Lucida Sans", sans-serif, cursive;
+  overflow: hidden;
+}
+
+h1 {
+  position: absolute;
+  top: 70px;
+  font-family: "Lucida Sans";
+  color: bisque;
+  font-size: 4rem;
+  text-shadow: -2px -2px 0 rgba(0, 0, 0, 0.45), 2px -2px 0 rgba(0, 0, 0, 0.45),
+    -2px 2px 0 rgba(0, 0, 0, 0.45), 2px 2px 0 rgba(0, 0, 0, 0.45);
+}
+
+#fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#fondo img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+#dog {
+  position: absolute;
+  width: 900px;
+  height: auto;
+  filter: drop-shadow(0 40px 4px rgba(0, 0, 0, 0.7));
+  margin-top: 300px;
+  z-index: 1;
+}
+
+#eyes-closed {
+  position: absolute;
+  width: 160px;
+  height: auto;
+
+  margin-top: 375px;
+  margin-left: -28%;
+  z-index: 2;
+  display: none;
+}
+
+#ladrido {
+  position: absolute;
+  width: 1090px;
+  height: auto;
+  filter: drop-shadow(0 40px 4px rgba(0, 0, 0, 0.7));
+  margin-top: 270px;
+  margin-left: -2.2%;
+  z-index: 2;
+  display: none;
+}
+
+#head_button {
+  position: absolute;
+  background-color: transparent;
+  width: 250px;
+  height: 200px;
+  top: 67%;
+  left: 36.5%;
+  transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+#tail {
+  position: absolute;
+  width: 340px;
+  height: auto;
+  bottom: 32%;
+  right: 29%;
+  z-index: 0;
+}
+
+#tail_button {
+  position: absolute;
+  background-color: transparent;
+  width: 30px;
+  height: 90px;
+  top: 41%;
+  left: 64.5%;
+  border: none;
+
+  cursor: pointer;
+  z-index: 3;
+  transform: rotate(45deg);
+}
+
+#head_button:hover::after {
+  content: "¡PET!";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent(0, 0, 0, 0.7);
+  color: bisque;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+  pointer-events: none;
+  font-size: 20px;
+  z-index: 50;
+  font-weight: bold;
+  font-family: "Lucida Sans";
+}
+
+#tail_button:hover::after {
+  content: "¡PULL!";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent(0, 0, 0, 0.7);
+  color: bisque;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+  pointer-events: none;
+  font-size: 19px;
+  z-index: 50;
+  font-weight: bold;
+  font-family: "Lucida Sans";
+}
+
+#head_button::after,
+#tail_button::after {
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+#toggleMusicBtn {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  background: #d36822;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#toggleMusicBtn:hover {
+  background: #290c00;
+}
+
+@keyframes wagTail {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.tail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 100px;
+  transform-origin: bottom left;
+}
+
+.wagging {
+  animation: wagTail 0.4s infinite ease-in-out;
+}
+
+
